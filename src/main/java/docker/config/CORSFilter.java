@@ -20,7 +20,7 @@ public class CORSFilter {
 		final UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
 		final CorsConfiguration corsConfig = new CorsConfiguration();
 		corsConfig.setAllowCredentials(true);
-		corsConfig.addAllowedOrigin(allowedOrigin);
+		corsConfig.addAllowedOrigin("*");
 		corsConfig.addAllowedHeader("*");
 		corsConfig.addAllowedMethod("OPTIONS");
 		corsConfig.addAllowedMethod("HEAD");
@@ -32,4 +32,6 @@ public class CORSFilter {
 		urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfig);
 		return new CorsFilter(urlBasedCorsConfigurationSource);
 	}
+	
+	
 }
