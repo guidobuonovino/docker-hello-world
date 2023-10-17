@@ -34,16 +34,13 @@ public class TestController {
 				summary = "testService",
 				description = "Servizio di test")
 	@GetMapping(value = "/test")
-	public ResponseEntity<ServiceResponse> testMethod(
+	public String testMethod(
 
-			@Parameter(required = false, description = "Test input param")
-			@RequestParam(name = "test-input-param", required = false) String testInputParam
 
 	// @formatter:on
 	) {
-		ServiceResponse serviceResponse = new ServiceResponse(HttpStatus.OK.value());
-		serviceResponse.setMessage("The test input param is " + testInputParam);
 
-		return new ResponseEntity<>(serviceResponse, HttpStatus.OK);
+
+		return "Hello World";
 	}
 }
